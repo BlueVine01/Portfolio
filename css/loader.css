@@ -1,0 +1,68 @@
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+.loader--heading {
+  font-size: 4.5rem;
+  color: #0b061f;
+  letter-spacing: 1px;
+  display: block;
+  font-weight: 300;
+  text-transform: capitalize;
+  margin-bottom: 3rem;
+  user-select: none;
+}
+.components-ready .preloader {
+    opacity: 0;
+    visibility: hidden;
+}
+.preloader {
+    position: fixed;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    z-index: 10000;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    background: #FFF;
+    transition: .3s all ease;
+}
+html.components-ready .page {
+  transition: opacity .25s, padding .2s ease-in-out;
+}
+.cssload-container {
+  width: 100%;
+  height: auto;
+  text-align: center;
+}
+.cssload-speeding-wheel {
+  width: 12rem;
+  height: 12rem;
+  margin: 0 auto;
+  border: 1rem solid #0b061f;
+  border-radius: 50%;
+  border-left-color: transparent;
+  border-bottom-color: transparent;
+  user-select: none;
+  backface-visibility: hidden;
+  animation: cssload-spin .88s infinite linear;
+}
+
+@keyframes cssload-spin {
+  0%,
+  40%, 
+  80% {
+    border-left-color: 1rem solid #0b061f;
+    border-bottom-color: 1rem solid #0b061f;
+
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
